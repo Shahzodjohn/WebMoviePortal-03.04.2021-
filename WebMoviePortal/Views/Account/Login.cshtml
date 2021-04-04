@@ -1,0 +1,38 @@
+﻿@model  WebMoviePortal.Models.Account.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="row">
+    <div class="form-control">
+        Login
+    </div>
+    <div class="card-body">
+        <form action="Login" method="post" asp-antiforgery="true">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="ReturnUrl" a/>
+            <div class="row">
+                <div class="form-group">
+                    <label asp-for="UserName" class="form-control"></label>
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label asp-for="Password" class="form-control"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <input type="submit" value="Login" class="btn btn-success btn-block btn-toolbar"/>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+</div>
